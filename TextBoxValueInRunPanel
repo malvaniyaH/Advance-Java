@@ -1,0 +1,32 @@
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+public class demo_panel {
+    public static void main(String[] args) {
+        
+        JFrame f = new JFrame("PanelDemo");
+        JPanel p = new JPanel();
+        JTextField t = new JTextField(15);
+        JButton b1 = new JButton("Done");
+        
+        p.setBackground(Color.LIGHT_GRAY);
+        
+        p.add(t);
+        p.add(b1);
+        f.add(p);
+        b1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               String Value = t.getText();
+                System.out.println(Value);
+            }
+        });
+        f.setSize(400, 400);
+        f.setLayout(new FlowLayout());
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
